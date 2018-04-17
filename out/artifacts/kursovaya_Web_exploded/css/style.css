@@ -1,0 +1,81 @@
+.container-fluid {
+    padding: 0; !important;
+}
+
+.container {
+    overflow: hidden;
+}
+
+.row {
+    margin: 0; !important;
+}
+
+.overflowBlock {
+    overflow: auto; !important;
+}
+.overflowBlock::-webkit-scrollbar {
+    width: 0;
+}
+.customCol {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 14px; !important;
+}
+.navbar-brand {
+    margin-right: 0;
+}
+.customA {
+    color: #212529; !important;
+}
+
+.checked {
+    color: #007BFF;
+}
+
+.customA:hover{
+    text-decoration: none; !important;
+    color: #007BFF; !important;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+.card {
+    border: none;
+}
+.customRate {
+    color: #007BFF; !important;
+    font-size: 18px;
+}
+.customRate:hover{
+    text-decoration: none; !important;
+}
+.customRow {
+    border-bottom: 1px solid #eaeaea;
+}
+
+p {
+    margin-bottom: 0.5rem; !important;
+}
+
+#comment {
+    resize: none;
+}
+
+.shpCost {
+    border: 1px solid rgba(139, 139, 139, 0.64); !important;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px; !important;
+}
+
+.customDangerBorder {
+    border-color: rgba(255, 88, 69, 0.8);
+    box-shadow: 0 0 0 0.2rem rgba(255, 14, 0,.25);
+}
+
+.shippingCost {
+    font-size: 1.25rem; !important;
+}
+
