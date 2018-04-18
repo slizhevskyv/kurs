@@ -372,7 +372,61 @@
                         </div>
                     </div>
                 </div>
-                <div role="tabpanel" id="information" class="tab-pane fade">Third block</div>
+                <div role="tabpanel" id="information" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-3 p-0">
+                            <nav class="navbar navbar-light bg-faded mt-5">
+                                <ul class="nav navbar-nav w-100">
+                                    <li class="nav-item d-block navItemBorder">
+                                        <a class="nav-link active d-flex align-items-center" id="taxiInfoTab" data-toggle="tab" role="tab" aria-controls="taxiInfo" aria-selected="true" href="#taxiInfo">
+                                            О такси
+                                        </a>
+                                    </li>
+                                    <li class="nav-item d-block navItemBorder">
+                                        <a class="nav-link" id="promotionTab" data-toggle="tab" role="tab" aria-controls="promotion" aria-selected="false" href="#promotion">Акции</a>
+                                    </li>
+                                    <li class="nav-item d-block navItemBorder">
+                                        <a class="nav-link" id="contactTab" data-toggle="tab" role="tab" aria-controls="contact" aria-selected="false" href="#contact">Контакты</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="col-9 p-0">
+                            <div class="container-fluid">
+                                <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="taxiInfoTab" id="taxiInfo">
+                                        <div class="container-fluid pt-4">
+                                            <div class="about-item mb-5">
+                                                <h2 class="d-flex align-items-center text-center font-weight-light justify-content-center">
+                                                    <img src="/img/svg/about-history.svg" class="mr-3" alt="history" width="40" height="50">
+                                                    История
+                                                </h2>
+                                                <p class="font-weight-light text-justify px-5">В 2002 году начала свою деятельность«Диспетчерская Объединенной службы такси «СПАС». Сейчас это диспетчерская Объединенной службы такси «Столица 135» и «Престиж» (СП ООО «КОРИС-ГУАРД» и ООО «Городское такси»). Начиналось все с нескольких каналов радиосвязи и заключения договоров с перевозчиками и индивидуальными предпринимателями</p>
+                                            </div>
+                                            <div class="about-item mb-5">
+                                                <h2 class="d-flex align-items-center text-center font-weight-light justify-content-center">
+                                                    <img src="/img/svg/about-autopark.svg" class="mr-4 pt-2" alt="history" width="40" height="50">
+                                                    Автопарк
+                                                </h2>
+                                                <p class="font-weight-light text-justify px-5">Диспетчерская Объединенной службы такси «Столица 135» и «Престиж» (СП ООО «КОРИС-ГУАРД» и ООО «Городское такси»)насчитывает парк автомобилей в количестве более 1000 единиц, различных марок. Все автомобили, осуществляющие перевозку пассажиров, обратившихся в диспетчерскую, принадлежат индивидуальным предпринимателям либо организациям, имеющим право на осуществление данной услуги.</p>
+                                            </div>
+                                            <div class="about-item mb-5">
+                                                <h2 class="d-flex align-items-center text-center font-weight-light justify-content-center">
+                                                    <img src="/img/svg/about-help.svg" class="mr-4 pt-2" alt="history" width="40" height="50">
+                                                    Автопомощь «СПАС»
+                                                </h2>
+                                                <p class="font-weight-light text-justify px-5">Эвакуация автомобиля в случае его технической поломки или ДТП по всей территории РБ;</br>
+                                                    Техническая помощь в пути: замена колеса, запуск двигателя от внешнего источника питания, вскрытие и ремонт замков любых видов, отключение зависших сигнализаций и т.д.;</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="promotionTab" id="promotion">promotion</div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contactTab" id="contact">contact</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
