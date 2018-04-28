@@ -40,6 +40,7 @@ function check(pointA,pointB) {
     }
 }
 
+
 buttonCallTaxi.onclick = function(e) {
     var count = 0;
     var invalidField = [];
@@ -51,7 +52,6 @@ buttonCallTaxi.onclick = function(e) {
         }
     }
     if(count === fieldMainForm.length) {
-
     }else {
         console.log(invalidField);
         for(var i = 0; i < invalidField.length; i++) {
@@ -62,7 +62,6 @@ buttonCallTaxi.onclick = function(e) {
         e.preventDefault();
     }
 }
-
 
 placemarkA.onblur = function() {
     if(this.value != "") {

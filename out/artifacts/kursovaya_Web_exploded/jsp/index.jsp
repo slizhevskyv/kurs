@@ -43,7 +43,7 @@
                 <div role="tabpanel" id="call" class="tab-pane fade show active">
                     <div class="row">
                         <div class="col-3 h-100 overflowBlock">
-                            <form action="" method="post">
+                            <form method="post" id="taxiForm" action="javascript:void(0);" onsubmit=call()>
                                 <br>
                                 <h3 class="font-weight-light text-center">Заказать такси</h3>
                                 <br>
@@ -66,10 +66,10 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-3 pl-0">
-                                        <input type="text" class="form-control form-control-sm" placeholder="+375" readonly>
+                                        <input  type="text" class="form-control form-control-sm" id="inputTelPrefix" placeholder="+375" readonly>
                                     </div>
                                     <div class="form-group col-3">
-                                        <select id="inputTelCode" class="form-control form-control-sm">
+                                        <select  id="inputTelCode" class="form-control form-control-sm">
                                             <option selected>29</option>
                                             <option>25</option>
                                             <option>33</option>
@@ -77,13 +77,13 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-6 pr-0">
-                                        <input type="text" id="telephone" class="form-control form-control-sm customForm" placeholder="123-45-67">
+                                        <input  type="text" id="telephone" class="form-control form-control-sm customForm" placeholder="123-45-67">
                                         <span class="custom-help-block font-weight-light">Некорректно заполнено поле</span>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group w-100">
-                                        <textarea class="form-control form-control-sm" id="comment" rows="4" placeholder="Комментарий" maxlength="120"></textarea>
+                                        <textarea  class="form-control form-control-sm" id="comment" rows="4" placeholder="Комментарий" maxlength="120"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-row mb-3">
@@ -91,38 +91,38 @@
                                         <a href="#addReq" aria-expanded="false" class="customA"  data-toggle="collapse">Дополнительные требования</a>
                                         <div id="addReq" class="collapse mt-3">
                                             <div class="form-check">
-                                                <input class="form-check-input radioActive" type="radio" name="carType" id="any" value="any" checked>
+                                                <input class="form-check-input radioActive" type="radio" name="carType" id="any" value="Любой" checked>
                                                 <label class="form-check-label font-weight-light pl-2 radioLabel checked" for="any">
                                                     Любой
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input radioActive" type="radio" name="carType" id="wagon" value="wagon">
+                                                <input class="form-check-input radioActive" type="radio" name="carType" id="wagon" value="Универсал">
                                                 <label class="form-check-label font-weight-light pl-2 radioLabel" for="wagon">
                                                     Универсал
                                                 </label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input radioActive" type="radio" name="carType" id="minivan" value="minivan">
+                                                <input class="form-check-input radioActive" type="radio" name="carType" id="minivan" value="Минивен">
                                                 <label class="form-check-label font-weight-light pl-2 radioLabel" for="minivan">
                                                     Минивен
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input checkboxActive" type="checkbox" value="" id="terminal">
-                                                <label class="form-check-label font-weight-light pl-2" for="terminal">
+                                                <input name="other" class="form-check-input checkboxActive" value="Терминал" type="checkbox" id="terminal">
+                                                <label class="form-check-label font-weight-light pl-2 checkbox" for="terminal">
                                                     Терминал
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input checkboxActive" type="checkbox" value="" id="babyChair">
-                                                <label class="form-check-label font-weight-light pl-2" for="babyChair">
+                                                <input name="other" class="form-check-input checkboxActive" value="Кресло" type="checkbox" id="babyChair">
+                                                <label class="form-check-label font-weight-light pl-2 checkbox" for="babyChair">
                                                     Детское кресло
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input checkboxActive" type="checkbox" value="" id="transportAnimal">
-                                                <label class="form-check-label font-weight-light pl-2" for="transportAnimal">
+                                                <input name="other" class="form-check-input checkboxActive" value="Животные" type="checkbox" id="transportAnimal">
+                                                <label class="form-check-label font-weight-light pl-2 checkbox" for="transportAnimal">
                                                     Перевозка животных
                                                 </label>
                                             </div>

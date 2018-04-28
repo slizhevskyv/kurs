@@ -26,3 +26,52 @@ $(".checkboxActive").on("click", function() {
 })
 
 
+var sendInfoObject = {
+    pointOfDeparture: "",
+    destination: "",
+    cost: "",
+    name: "",
+    phoneNumber: "",
+    comment: "",
+    typeOfMachine: "",
+    other: ""
+}
+
+function call() {
+    var checkBoxString = "";
+    $("input[name=other]:checked").each(function() {
+        checkBoxString += $(this).val() + " ";
+    })
+    sendInfoObject.pointOfDeparture = $("#startPoint").val();
+    sendInfoObject.destination = $("#endPoint").val();
+    sendInfoObject.cost = $("#shippingCost").text();
+    sendInfoObject.name = $("#nameCustomer").val();
+    sendInfoObject.phoneNumber = "+375" + $("#inputTelCode").val() + $("#telephone").val();
+    sendInfoObject.comment = $("#comment").val();
+    sendInfoObject.typeOfMachine = $("input[name=carType]:checked").val();
+    sendInfoObject.other = checkBoxString;
+
+    var sendInfoObjectJSON = JSON.stringify(sendInfoObject);
+
+    console.log(sendInfoObjectJSON);
+
+    $.ajax({
+        type: 'POST',
+        url: '/orderTaxi',
+        data: sendInfoObjectJSON,
+        success: function(data) {
+            $('#taxiForm')[0].reset();
+            $(".checkbox").each(function() {
+                $(this).css("color","#212529");
+            })
+            $(".radioLabel").each(function() {
+                $(this).css("color","#212529");
+            })
+        },
+        error:  function(xhr){
+            alert('Возникла ошибка: ' + xhr.responseCode);
+        }
+    });
+
+}
+
