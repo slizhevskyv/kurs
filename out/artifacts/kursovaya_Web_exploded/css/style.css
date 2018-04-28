@@ -91,3 +91,22 @@ p {
     color: #007BFF; !important;
 }
 
+
+.fs-13 {
+    font-size: 1.2rem;
+}
+
+.textColorBlue {
+    color: #007BFF;
+}
+
+.textColorBlue.fs-13 {
+    font-size: 1.3rem;
+}
+
+.custom-help-block {
+    display: none;
+    font-size: 0.8rem;
+    color: rgba(255, 88, 69, 0.8);
+}
+

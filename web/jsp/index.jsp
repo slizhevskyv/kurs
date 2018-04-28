@@ -49,16 +49,19 @@
                                 <br>
                                 <div class="form-row">
                                     <div class="form-group w-100">
-                                        <input type="text" class="form-control form-control-sm" id="startPoint" placeholder="Пункт отправления">
+                                        <input type="text" class="form-control form-control-sm customForm" id="startPoint" placeholder="Пункт отправления">
+                                        <span class="custom-help-block font-weight-light">Некорректно заполнено поле</span>
                                     </div>
                                     <div class="form-group w-100">
-                                        <input type="text" class="form-control form-control-sm" id="endPoint" placeholder="Пункт назначения">
-                                     </div>
+                                        <input type="text" class="form-control form-control-sm customForm" id="endPoint" placeholder="Пункт назначения">
+                                        <span class="custom-help-block font-weight-light">Некорректно заполнено поле</span>
+                                    </div>
                                     <div class="form-group w-100 p-3 shpCost">
                                         <p class="font-weight-light text-center m-0">Стоимость: <span id="shippingCost">0</span></p>
                                     </div>
                                     <div class="form-group w-100">
-                                        <input type="text" class="form-control form-control-sm" id="nameCustomer" placeholder="Имя">
+                                        <input type="text" class="form-control form-control-sm customForm" id="nameCustomer" placeholder="Имя">
+                                        <span class="custom-help-block font-weight-light">Некорректно заполнено поле</span>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -74,7 +77,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-6 pr-0">
-                                        <input type="text" id="telephone" class="form-control form-control-sm" placeholder="123-45-67">
+                                        <input type="text" id="telephone" class="form-control form-control-sm customForm" placeholder="123-45-67">
+                                        <span class="custom-help-block font-weight-light">Некорректно заполнено поле</span>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -126,7 +130,7 @@
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <button type="submit" class="btn btn-primary w-100">Вызвать</button>
+                                    <button type="submit" id="callTaxi" class="btn btn-primary w-100">Вызвать</button>
                                 </div>
                             </form>
                         </div>
@@ -395,20 +399,20 @@
                             <div class="container-fluid">
                                 <div class="tab-content" id="nav-tabContent">
                                     <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="taxiInfoTab" id="taxiInfo">
-                                        <div class="container-fluid pt-4">
+                                        <div class="container-fluid pt-5">
                                             <div class="about-item mb-5">
                                                 <h2 class="d-flex align-items-center text-center font-weight-light justify-content-center">
                                                     <img src="/img/svg/about-history.svg" class="mr-3" alt="history" width="40" height="50">
                                                     История
                                                 </h2>
-                                                <p class="font-weight-light text-justify px-5">В 2002 году начала свою деятельность«Диспетчерская Объединенной службы такси «СПАС». Сейчас это диспетчерская Объединенной службы такси «Столица 135» и «Престиж» (СП ООО «КОРИС-ГУАРД» и ООО «Городское такси»). Начиналось все с нескольких каналов радиосвязи и заключения договоров с перевозчиками и индивидуальными предпринимателями</p>
+                                                <p class="font-weight-light text-justify px-5">В 2018 году начала свою деятельность такси "791". Начиналось все с нескольких каналов радиосвязи и заключения договоров с перевозчиками и индивидуальными предпринимателями</p>
                                             </div>
                                             <div class="about-item mb-5">
                                                 <h2 class="d-flex align-items-center text-center font-weight-light justify-content-center">
                                                     <img src="/img/svg/about-autopark.svg" class="mr-4 pt-2" alt="history" width="40" height="50">
                                                     Автопарк
                                                 </h2>
-                                                <p class="font-weight-light text-justify px-5">Диспетчерская Объединенной службы такси «Столица 135» и «Престиж» (СП ООО «КОРИС-ГУАРД» и ООО «Городское такси»)насчитывает парк автомобилей в количестве более 1000 единиц, различных марок. Все автомобили, осуществляющие перевозку пассажиров, обратившихся в диспетчерскую, принадлежат индивидуальным предпринимателям либо организациям, имеющим право на осуществление данной услуги.</p>
+                                                <p class="font-weight-light text-justify px-5">Служба такси "791" насчитывает парк автомобилей в количестве более 1000 единиц, различных марок. Все автомобили, осуществляющие перевозку пассажиров, обратившихся в диспетчерскую, принадлежат индивидуальным предпринимателям либо организациям, имеющим право на осуществление данной услуги.</p>
                                             </div>
                                             <div class="about-item mb-5">
                                                 <h2 class="d-flex align-items-center text-center font-weight-light justify-content-center">
@@ -420,8 +424,94 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="promotionTab" id="promotion">promotion</div>
-                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contactTab" id="contact">contact</div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="promotionTab" id="promotion">
+                                        <div class="container-fluid pt-5">
+                                            <div class="pt-3">
+                                                <h2 class="text-center font-weight-light mb-3">Подари радость детям!</h2>
+                                                <p class="font-weight-light text-justify px-3">
+                                                    С 1 марта 2008 года стартовал проект «Подари радость детям», в рамках которого диспетчерская служба такси «791» отчисляла в ГУО «Социально-педагогический центр с приютом Партизанского района г.Минска» денежные средства, приобретала одежду, канцелярские принадлежности и другие необходимые вещи, помогала в благоустройстве их быта, организовывала ознакомительные и культурно-развлекательные экскурсии на предприятия, производящие товары или оказывающие услуги, поздравляла с праздниками и днём рождения каждого ребёнка. Осенью 2011 года приют расформировали, и c 2012 мы взяли под свою опеку ГУ «Детский дом-интернат для детей-инвалидов с особенностями психофизического развития».
+
+                                                    Помните! Пользуясь услугами нашей диспетчерской службы такси «791», а так же технической помощью «СПАС» – Вы вместе с нами участвуете в акции «Подари радость детям!».
+
+                                                    Воспитанники приюта с радость будут ждать Вас по адресу г. Минск ул. Выготского, 16.
+
+                                                    Вы хотите помочь интернату материально? Денежные средства можно перечислить по следующим реквизитам:
+                                                </p>
+                                                <p class="font-weight-bold px-3">
+                                                    р/с 3632000001103</br>
+                                                    ф-л 510 АСБ «Беларусбанк» код 603</br>
+                                                    ул. Куйбышева, 18, г. Минск</br>
+                                                    УНП 600302128, ОКПО 37365512</br>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" role="tabpanel" aria-labelledby="contactTab" id="contact">
+                                        <div class="container-fluid pt-5 mt-5">
+                                            <div class="row pt-3">
+                                                <div class="col-6">
+                                                    <div class="contact-item px-2">
+                                                        <h2 class="text-center font-weight-light mb-5">Телефоны для вызова</h2>
+                                                        <div class="contact-item__item contact-item__item d-flex align-items-center mb-3">
+                                                            <span class="textColorBlue mr-3 fs-13">135</span>
+                                                            <span class="font-weight-light fs-13">с городского или мобильного</span>
+                                                        </div>
+                                                        <div class="contact-item__item d-flex align-items-center mb-3">
+                                                            <span class="mr-3"><img src="/img/svg/tel.svg" alt="" width="35" height="35"></span>
+                                                            <span class="font-weight-light fs-13">+375 44 111-22-33 (Viber, Telegram, WhatsApp)</span>
+                                                        </div>
+                                                        <div class="contact-item__item d-flex align-items-center mb-3">
+                                                            <span class="mr-3"><img src="/img/svg/tel-vel.svg" alt="" width="35" height="35"></span>
+                                                            <span class="font-weight-light fs-13">+375 44 111-22-33, +375 29 123-45-67</span>
+                                                        </div>
+                                                        <div class="contact-item__item d-flex align-items-center mb-3">
+                                                            <span class="mr-3"><img src="/img/svg/tel-mts.svg" alt="" width="35" height="35"></span>
+                                                            <span class="font-weight-light fs-13">+375 44 111-22-33, +375 29 123-45-67</span>
+                                                        </div>
+                                                        <div class="contact-item__item d-flex align-items-center mb-3">
+                                                            <span class="mr-3"><img src="/img/svg/tel-life.svg" alt="" width="35" height="35"></span>
+                                                            <span class="font-weight-light fs-13">+375 44 111-22-33, +375 29 123-45-67</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6 pr-5">
+                                                    <div class="contact-item">
+                                                        <form action="" method="post">
+                                                            <h2 class="text-center font-weight-light mb-4">Обратная связь</h2>
+                                                            <p class="small font-weight-light text-center">Если возникли вопросы по работе службы такси "791", пожалуйста, заполните форму.</p>
+                                                            <br>
+                                                            <div class="form-row justify-content-center">
+                                                                <div class="form-group w-100">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="Имя">
+                                                                </div>
+                                                                <div class="form-group col-3 pl-0">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="+375" readonly>
+                                                                </div>
+                                                                <div class="form-group col-3">
+                                                                    <select class="form-control form-control-sm">
+                                                                        <option selected>29</option>
+                                                                        <option>25</option>
+                                                                        <option>33</option>
+                                                                        <option>44</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-6 pr-0">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="123-45-67">
+                                                                </div>
+                                                                <div class="form-group w-100">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="Email">
+                                                                </div>
+                                                                <div class="form-group w-100">
+                                                                    <input type="text" class="form-control form-control-sm" placeholder="Сообщение">
+                                                                </div>
+                                                                <button type="submit" class="btn btn-primary w-75">Отправить</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -430,8 +520,6 @@
             </div>
         </div>
     </div>
-
-
 
 
 
