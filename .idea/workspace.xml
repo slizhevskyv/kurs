@@ -8,14 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="18d22604-ca23-42c5-86a1-3b6a7de97ecf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/kursovaya.iml" afterPath="$PROJECT_DIR$/kursovaya.iml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/custom.js" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/custom.js" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/jquery.js" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/jquery.js" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/jsp/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/jsp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/web/js/custom.js" afterPath="$PROJECT_DIR$/web/js/custom.js" />
       <change beforePath="$PROJECT_DIR$/web/js/jquery.js" afterPath="$PROJECT_DIR$/web/js/jquery.js" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/index.jsp" afterPath="$PROJECT_DIR$/web/jsp/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/web/js/jquery.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="148">
-              <caret line="64" column="47" lean-forward="true" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+              <caret line="62" column="38" lean-forward="true" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -497,7 +493,7 @@
       <workItem from="1524237430355" duration="737000" />
       <workItem from="1524647232124" duration="707000" />
       <workItem from="1524821769623" duration="1199000" />
-      <workItem from="1524912750987" duration="20284000" />
+      <workItem from="1524912750987" duration="20358000" />
     </task>
     <task id="LOCAL-00001" summary="18/04/18">
       <created>1524052756152</created>
@@ -513,11 +509,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524925021704</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ver 1.0">
+      <created>1524941593589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524941593590</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107730000" />
+    <option name="totallyTimeSpent" value="107804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
@@ -564,7 +567,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="18/04/18" />
     <MESSAGE value="28/04/18" />
-    <option name="LAST_COMMIT_MESSAGE" value="28/04/18" />
+    <MESSAGE value="ver 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -970,7 +974,7 @@
     <entry file="file://$PROJECT_DIR$/web/js/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
-          <caret line="64" column="47" lean-forward="true" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+          <caret line="62" column="38" lean-forward="true" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
           <folding />
         </state>
       </provider>

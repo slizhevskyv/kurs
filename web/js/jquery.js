@@ -59,7 +59,7 @@ function call() {
         type: 'POST',
         url: '/orderTaxi',
         data: sendInfoObjectJSON,
-        success: function(data) {
+        success: function() {
             $('#taxiForm')[0].reset();
             $(".checkbox").each(function() {
                 $(this).css("color","#212529");
