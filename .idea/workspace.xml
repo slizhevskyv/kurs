@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="18d22604-ca23-42c5-86a1-3b6a7de97ecf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/custom.js" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/custom.js" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/jquery.js" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/jquery.js" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/jsp/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/jsp/index.jsp" />
       <change beforePath="$PROJECT_DIR$/web/js/jquery.js" afterPath="$PROJECT_DIR$/web/js/jquery.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,8 +28,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/jsp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="106" column="112" lean-forward="false" selection-start-line="106" selection-start-column="102" selection-end-line="106" selection-end-column="112" />
+            <state relative-caret-position="128">
+              <caret line="93" column="90" lean-forward="false" selection-start-line="93" selection-start-column="79" selection-end-line="93" selection-end-column="90" />
               <folding>
                 <element signature="n#!!doc;n#jsp:root#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -47,9 +44,16 @@
       <file leaf-file-name="jquery.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/jquery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="62" column="38" lean-forward="true" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="522">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="e#86968#87165#0" expanded="false" />
+                <element signature="e#87210#87326#0" expanded="false" />
+                <element signature="e#87374#87560#0" expanded="false" />
+                <element signature="e#87585#87738#0" expanded="false" />
+                <element signature="e#88685#88748#0" expanded="false" />
+                <element signature="e#88795#89025#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -493,7 +497,7 @@
       <workItem from="1524237430355" duration="737000" />
       <workItem from="1524647232124" duration="707000" />
       <workItem from="1524821769623" duration="1199000" />
-      <workItem from="1524912750987" duration="20358000" />
+      <workItem from="1524912750987" duration="21466000" />
     </task>
     <task id="LOCAL-00001" summary="18/04/18">
       <created>1524052756152</created>
@@ -516,11 +520,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524941593590</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ver 1.01">
+      <created>1524941741354</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524941741354</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107804000" />
+    <option name="totallyTimeSpent" value="108912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
@@ -565,10 +576,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="18/04/18" />
     <MESSAGE value="28/04/18" />
     <MESSAGE value="ver 1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver 1.0" />
+    <MESSAGE value="ver 1.01" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 1.01" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -959,8 +973,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/jsp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="106" column="112" lean-forward="false" selection-start-line="106" selection-start-column="102" selection-end-line="106" selection-end-column="112" />
+        <state relative-caret-position="128">
+          <caret line="93" column="90" lean-forward="false" selection-start-line="93" selection-start-column="79" selection-end-line="93" selection-end-column="90" />
           <folding>
             <element signature="n#!!doc;n#jsp:root#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -973,9 +987,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="62" column="38" lean-forward="true" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
-          <folding />
+        <state relative-caret-position="522">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#86968#87165#0" expanded="false" />
+            <element signature="e#87210#87326#0" expanded="false" />
+            <element signature="e#87374#87560#0" expanded="false" />
+            <element signature="e#87585#87738#0" expanded="false" />
+            <element signature="e#88685#88748#0" expanded="false" />
+            <element signature="e#88795#89025#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

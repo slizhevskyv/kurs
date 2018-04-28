@@ -15,7 +15,7 @@ $(".customA").on("click", function() {
 
 $(".radioActive").on("click", function() {
     $(".radioLabel").css("color", "#212529");
-    var $sibl = $(this).siblings(".form-check-label").css("color", "#007BFF");
+    $(this).siblings(".form-check-label").css("color", "#007BFF");
 });
 
 $(".checkboxActive").on("click", function() {
@@ -65,8 +65,13 @@ function call() {
                 $(this).css("color","#212529");
             })
             $(".radioLabel").each(function() {
-                $(this).css("color","#212529");
+                if($(this).siblings(".radioActive").is(":checked")) {
+                    $(this).css("color","#007BFF");
+                }else{
+                    $(this).css("color","#212529");
+                }
             })
+            $("#shippingCost").text("0");
         },
         error:  function(xhr){
             alert('Возникла ошибка: ' + xhr.responseCode);
