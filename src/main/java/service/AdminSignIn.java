@@ -5,15 +5,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Enumeration;
 
-@WebServlet(name = "AdminCheckIn",urlPatterns = "/admin")
-public class AdminCheckIn extends HttpServlet {
+@WebServlet(name = "AdminSignIn", urlPatterns = "/admin")
+public class AdminSignIn extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/jsp/admin.jsp").forward(request,response);
+
     }
 }

@@ -3,23 +3,21 @@ package dao.impl;
 import dao.OrderDAO;
 import entity.Order;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.sql.*;
 import java.util.Date;
 
 public class OrderDAOImpl implements OrderDAO {
     private final String driverName = "com.mysql.jdbc.Driver";
+    private final String url = "jdbc:mysql://localhost:3306";
+    private final String userDB = "root";
+    private final String passwordDB = "root";
 
     public boolean addOrder(Order order) {
         try {
             Class.forName(driverName);
             Connection connection = null;
             try {
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306","root","root");
+                connection = DriverManager.getConnection(url,userDB,passwordDB);
                 PreparedStatement statement = null;
                 try{
                     String sql = "INSERT INTO business.order(departure, destination, customerName, telephone, cost, comment, typeOfMachine, addRequirement, date) VALUES(?,?,?,?,?,?,?,?,?)";
@@ -53,5 +51,72 @@ public class OrderDAOImpl implements OrderDAO {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public String getRoleByLoginAndPass(String login, String password) {
+        try {
+            Class.forName(driverName);
+            Connection connection = DriverManager.getConnection(url,userDB,passwordDB);
+            try {
+                Statement statement = connection.createStatement();
+                try {
+                    ResultSet set = statement.executeQuery("SELECT login,password,role FROM business.users");
+                    try {
+                        while (set.next()) {;
+                            String loginDB1 = set.getString("login");
+                            String passwordDB1 = set.getString("password");
+                            String userRole = set.getString("role");
+                            if (login.equalsIgnoreCase(loginDB1) && password.equals(passwordDB1)) {
+                                return userRole;
+                            }
+                        }
+                    } finally {
+                        set.close();
+                    }
+                }finally {
+                    statement.close();
+                }
+                }finally {
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
+    public boolean userIsExist(String login, String password) {
+        try {
+            Class.forName(driverName);
+            Connection connection = DriverManager.getConnection(url,userDB,passwordDB);
+            try {
+                Statement statement = connection.createStatement();
+                try {
+                    ResultSet set = statement.executeQuery("SELECT login,password FROM business.users");
+                    try {
+                        while (set.next()) {
+                            String loginDB1 = set.getString("login");
+                            String passwordDB1 = set.getString("password");
+                            if (login.equalsIgnoreCase(loginDB1) && password.equals(passwordDB1)) {
+                               return true;
+                            }
+                        }
+                    } finally {
+                        set.close();
+                    }
+                }finally {
+                    statement.close();
+                }
+            }finally {
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

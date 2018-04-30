@@ -521,6 +521,7 @@
             </div>
         </div>
     </div>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <c:import url="fragment/scriptFragment.jsp"></c:import>
 </body>
 </html>
