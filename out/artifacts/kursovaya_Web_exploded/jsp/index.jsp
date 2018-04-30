@@ -6,9 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title></title>
+    <title>Заказать такси онлайн 791</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -61,7 +62,7 @@
                                     </div>
                                     <div class="form-group w-100">
                                         <input type="text" class="form-control form-control-sm customForm" id="nameCustomer" placeholder="Имя">
-                                        <span class="custom-help-block font-weight-light">Некорректно заполнено поле</span>
+                                        <span class="custom-help-block font-weight-light">Введите корректное имя</span>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -78,7 +79,7 @@
                                     </div>
                                     <div class="form-group col-6 pr-0">
                                         <input  type="text" id="telephone" class="form-control form-control-sm customForm" placeholder="123-45-67">
-                                        <span class="custom-help-block font-weight-light">Некорректно заполнено поле</span>
+                                        <span class="custom-help-block font-weight-light">Введите корректный номер телефона XXX-XX-XX</span>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -520,16 +521,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/custom.js"></script>
+    <c:import url="fragment/scriptFragment.jsp"></c:import>
 </body>
 </html>

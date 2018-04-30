@@ -27,7 +27,6 @@ function check(pointA,pointB) {
             boundedBy: mBounds,
             strictBounds: true
         }).then(function(route) {
-            //console.log(route.getLength());
             mainRoute = route;
             route.options.set("mapStateAutoApply", true);
             myMap.geoObjects.add(route);

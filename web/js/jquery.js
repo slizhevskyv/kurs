@@ -46,32 +46,33 @@ function call() {
     sendInfoObject.destination = $("#endPoint").val();
     sendInfoObject.cost = $("#shippingCost").text();
     sendInfoObject.name = $("#nameCustomer").val();
-    sendInfoObject.phoneNumber = "+375" + $("#inputTelCode").val() + $("#telephone").val();
+    sendInfoObject.phoneNumber = "+375(" + $("#inputTelCode").val() +")" + $("#telephone").val();
     sendInfoObject.comment = $("#comment").val();
     sendInfoObject.typeOfMachine = $("input[name=carType]:checked").val();
     sendInfoObject.other = checkBoxString;
 
     var sendInfoObjectJSON = JSON.stringify(sendInfoObject);
 
-    console.log(sendInfoObjectJSON);
-
     $.ajax({
         type: 'POST',
         url: '/orderTaxi',
         data: sendInfoObjectJSON,
-        success: function() {
-            $('#taxiForm')[0].reset();
-            $(".checkbox").each(function() {
-                $(this).css("color","#212529");
-            })
-            $(".radioLabel").each(function() {
-                if($(this).siblings(".radioActive").is(":checked")) {
-                    $(this).css("color","#007BFF");
-                }else{
+        success: function(data) {
+            if(data == 1) {
+                $('#taxiForm')[0].reset();
+                $(".checkbox").each(function() {
                     $(this).css("color","#212529");
-                }
-            })
-            $("#shippingCost").text("0");
+                })
+                $(".radioLabel").each(function() {
+                    if($(this).siblings(".radioActive").is(":checked")) {
+                        $(this).css("color","#007BFF");
+                    }else{
+                        $(this).css("color","#212529");
+                    }
+                })
+                $("#shippingCost").text("0");
+
+            }
         },
         error:  function(xhr){
             alert('Возникла ошибка: ' + xhr.responseCode);

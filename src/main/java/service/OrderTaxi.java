@@ -1,11 +1,14 @@
 package service;
 
+import dao.DAOFactory;
+import dao.OrderDAO;
 import entity.Order;
 import entity.OrderBuilder;
 import org.json.JSONException;
 import org.json.JSONObject;
 import util.CostParser;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,7 +38,14 @@ public class OrderTaxi extends HttpServlet {
                             .typeOfMachine(jObject.getString("typeOfMachine"))
                             .addRequirement(jObject.getString("other"))
                             .build();
-            System.out.println(order);
+            DAOFactory factory = DAOFactory.getInstance();
+            OrderDAO dao = factory.getOrderDAO();
+            boolean result = dao.addOrder(order);
+            if(result) {
+                response.getWriter().write("1");
+            } else {
+                response.getWriter().write("0");
+            }
         }catch(JSONException ex) {
             throw new IOException("Error parsing JSON request string");
         }
