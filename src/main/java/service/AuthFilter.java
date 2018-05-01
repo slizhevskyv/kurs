@@ -20,15 +20,17 @@ public class AuthFilter implements Filter {
 
         final String login = request.getParameter("login");
         final String password = request.getParameter("password");
+        final HttpSession session = request.getSession();
+
+        if((login == null &&
+                password == null) && (session.getAttribute("login") == null
+                                    && session.getAttribute("password") == null)) {
+            request.getRequestDispatcher("/jsp/signInForm.jsp").forward(request, response);
+        }
+
 
         DAOFactory factory = DAOFactory.getInstance();
         OrderDAO dao = factory.getOrderDAO();
-
-        final HttpSession session = request.getSession();
-
-        if(login == null && password == null) {
-            request.getRequestDispatcher("/jsp/signinform.jsp").forward(request, response);
-        }
 
         if(session != null &&
                 session.getAttribute("login") != null &&
@@ -37,11 +39,10 @@ public class AuthFilter implements Filter {
             moveToMenu(request,response,role);
         } else if(dao.userIsExist(login,password)) {
             final String role = dao.getRoleByLoginAndPass(login,password);
-
-            request.setAttribute("password", password);
-            request.setAttribute("login", login);
-            request.setAttribute("role", role);
-
+            session.setAttribute("password", password);
+            session.setAttribute("login", login);
+            session.setAttribute("role", role);
+            session.setMaxInactiveInterval(20*60);
             moveToMenu(request, response, role);
         } else {
             moveToMenu(request, response, "UNKNOWN");
@@ -52,7 +53,7 @@ public class AuthFilter implements Filter {
         if(role.equals("ADMIN")) {
             request.getRequestDispatcher("/jsp/adminPanel.jsp").forward(request, response);
         }else {
-            request.getRequestDispatcher("/jsp/signinform.jsp").forward(request, response);
+            request.getRequestDispatcher("/jsp/signInForm.jsp").forward(request, response);
         }
     }
 
