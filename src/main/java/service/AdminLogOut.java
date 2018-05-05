@@ -1,9 +1,5 @@
 package service;
 
-import dao.DAOFactory;
-import dao.OrderDAO;
-import entity.Order;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,19 +7,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.List;
 
-@WebServlet(name = "AdminSignIn", urlPatterns = "/admin")
-public class AdminSignIn extends HttpServlet {
+@WebServlet(name = "AdminLogOut", urlPatterns = "/logout")
+public class AdminLogOut extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        DAOFactory factory = DAOFactory.getInstance();
-        OrderDAO dao = factory.getOrderDAO();
-        List<Order> list = dao.getAllOrders();
-        request.setAttribute("orders", list);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession session = request.getSession();
+        if(session != null) {
+            session.removeAttribute("login");
+            session.removeAttribute("password");
+            session.removeAttribute("role");
+            session.invalidate();
+        }
+        response.sendRedirect("/admin");
     }
 }

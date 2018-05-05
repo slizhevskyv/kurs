@@ -2,13 +2,16 @@ package dao.impl;
 
 import dao.OrderDAO;
 import entity.Order;
+import entity.OrderBuilder;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class OrderDAOImpl implements OrderDAO {
     private final String driverName = "com.mysql.jdbc.Driver";
-    private final String url = "jdbc:mysql://localhost:3306";
+    private final String url = "jdbc:mysql://localhost:3306/business?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private final String userDB = "root";
     private final String passwordDB = "root";
 
@@ -20,7 +23,7 @@ public class OrderDAOImpl implements OrderDAO {
                 connection = DriverManager.getConnection(url,userDB,passwordDB);
                 PreparedStatement statement = null;
                 try{
-                    String sql = "INSERT INTO business.order(departure, destination, customerName, telephone, cost, comment, typeOfMachine, addRequirement, date) VALUES(?,?,?,?,?,?,?,?,?)";
+                    String sql = "INSERT INTO business.order(departure, destination, customerName, telephone, cost, comment, typeOfMachine, addRequirement, dateOrder, time) VALUES(?,?,?,?,?,?,?,?,?,?)";
                     statement = connection.prepareStatement(sql);
                     Date date = new Date();
                     statement.setString(1, order.getPointOfDeparture());
@@ -31,7 +34,8 @@ public class OrderDAOImpl implements OrderDAO {
                     statement.setString(6, order.getComment());
                     statement.setString(7, order.getTypeOfMachine());
                     statement.setString(8, order.getAddRequirement());
-                    statement.setTimestamp(9, new java.sql.Timestamp(date.getTime()));
+                    statement.setDate(9, new java.sql.Date(date.getTime()));
+                    statement.setTime(10, new java.sql.Time(System.currentTimeMillis()));
                     statement.executeUpdate();
                 } finally {
                     if(statement != null) {
@@ -118,5 +122,75 @@ public class OrderDAOImpl implements OrderDAO {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public String getCostByDate() {
+        StringBuffer buffer = new StringBuffer();
+        try {
+            Class.forName(driverName);
+            Connection connection = DriverManager.getConnection(url,userDB,passwordDB);
+            try {
+                Statement statement = connection.createStatement();
+                try {
+                    ResultSet set = statement.executeQuery("SELECT dateOrder,SUM(cost) AS cost FROM business.order WHERE dateOrder <= CURRENT_DATE GROUP BY dateOrder LIMIT 5");
+                    try {
+                        while (set.next()) {
+                            buffer.append(set.getDate("dateOrder") + " " + set.getFloat("cost") + "\n");
+                        }
+                    } finally {
+                        set.close();
+                    }
+                }finally {
+                    statement.close();
+                }
+            }finally {
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return buffer.toString();
+    }
+
+    public List<Order> getAllOrders() {
+        List<Order> list = new ArrayList<Order>();
+        try {
+            Class.forName(driverName);
+            Connection connection = DriverManager.getConnection(url,userDB,passwordDB);
+            try {
+                Statement statement = connection.createStatement();
+                try {
+                    ResultSet set = statement.executeQuery("SELECT departure,destination,customerName,telephone,cost,comment,typeOfMachine,addRequirement FROM business.order");
+                    try {
+                        while (set.next()) {
+                            Order order = new OrderBuilder()
+                                    .addRequirement(set.getString("addRequirement"))
+                                    .typeOfMachine(set.getString("typeOfMachine"))
+                                    .comment(set.getString("comment"))
+                                    .cost(set.getFloat("cost"))
+                                    .phoneNumber(set.getString("telephone"))
+                                    .customerName(set.getString("customerName"))
+                                    .destination(set.getString("destination"))
+                                    .departure(set.getString("departure"))
+                                    .build();
+                            list.add(order);
+                        }
+                    } finally {
+                        set.close();
+                    }
+                }finally {
+                    statement.close();
+                }
+            }finally {
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
     }
 }

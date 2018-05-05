@@ -110,3 +110,19 @@ p {
     color: rgba(255, 88, 69, 0.8);
 }
 
+.d-noneCustom {
+    display: none;
+}
+
+.bdy::-webkit-scrollbar {
+    width: 0;
+}
+
+.col-sm-12.col-md-7 {
+    padding: 0; !important;
+}
+
+#tableOrders_filter label {
+    width: 200px;
+    float: right;
+}

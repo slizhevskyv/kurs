@@ -51,6 +51,8 @@ public class AuthFilter implements Filter {
 
     private void moveToMenu(HttpServletRequest request, HttpServletResponse response, String role) throws ServletException, IOException {
         if(role.equals("ADMIN")) {
+            AdminSignIn signIn = new AdminSignIn();
+            signIn.doPost(request,response);
             request.getRequestDispatcher("/jsp/adminPanel.jsp").forward(request, response);
         }else {
             request.getRequestDispatcher("/jsp/signInForm.jsp").forward(request, response);
