@@ -18,7 +18,11 @@
 </head>
 <body class="bdy">
     <nav class="navbar navbar-light bg-light">
-        <div class="container justify-content-end align-items-center">
+        <div class="container justify-content-between align-items-center">
+            <div class="align-items-center flex-row">
+                <button id="giveJoyButton" class="btn btn-primary">Подарить радость детям</button>
+                <p id="newCost" class="d-inline font-weight-light">Общая сумма: ${requestScope.cost} BYN</p>
+            </div>
             <ul class="navbar-nav flex-row mr-5">
                 <li class="nav-item mr-3">
                     <a class="nav-link" id="chart" href="javascript:void(0);">График заказов</a>
@@ -33,7 +37,12 @@
     </nav>
     <div class="container">
         <div id="curve_chart" class="d-noneCustom" style="height: 600px;"></div>
-        <div id="orders" class="d-noneCustom p-3 mt-5">
+        <div id="orders" class="d-noneCustom p-3 mt-5 flex-column">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="/admin/downloadFile">Скачать таблицу</a>
+                </div>
+            </div>
             <table id="tableOrders" class="table table-bordered table-hover">
                 <thead>
                     <tr>

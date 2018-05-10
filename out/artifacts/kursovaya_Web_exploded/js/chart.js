@@ -24,7 +24,6 @@ orderA.onclick = function() {
 
 
 function getDataArr(data) {
-    console.log(data)
     var arr = data.split("\n");
     var result = [];
     for(var i = 0; i < arr.length; i++) {
@@ -33,7 +32,7 @@ function getDataArr(data) {
     for(var i = 0; i < result.length; i++) {
         for(var j = 0; j < result[i].length; j++) {
             if(j % 2 == 1) {
-                result[i][j] = parseFloat(result[i][j]);
+                result[i][j] = +parseFloat(result[i][j]).toFixed(2);
             } else {
                 var sec = Date.parse(result[i][j]);
                 var date = new Date(sec);

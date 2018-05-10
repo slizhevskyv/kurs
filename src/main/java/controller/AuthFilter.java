@@ -1,4 +1,4 @@
-package service;
+package controller;
 
 import dao.DAOFactory;
 import dao.OrderDAO;
@@ -24,7 +24,7 @@ public class AuthFilter implements Filter {
 
         if((login == null &&
                 password == null) && (session.getAttribute("login") == null
-                                    && session.getAttribute("password") == null)) {
+                && session.getAttribute("password") == null)) {
             request.getRequestDispatcher("/jsp/signInForm.jsp").forward(request, response);
         }
 
@@ -51,8 +51,15 @@ public class AuthFilter implements Filter {
 
     private void moveToMenu(HttpServletRequest request, HttpServletResponse response, String role) throws ServletException, IOException {
         if(role.equals("ADMIN")) {
-            AdminSignIn signIn = new AdminSignIn();
-            signIn.doPost(request,response);
+            String uri = request.getRequestURI();
+            if(uri.equalsIgnoreCase("/admin")) {
+                AdminSignIn signIn = new AdminSignIn();
+                signIn.doPost(request,response);
+            }
+            if(uri.equalsIgnoreCase("/admin/downloadFile")) {
+                DownloadFile downloadFile = new DownloadFile();
+                downloadFile.doGet(request,response);
+            }
             request.getRequestDispatcher("/jsp/adminPanel.jsp").forward(request, response);
         }else {
             request.getRequestDispatcher("/jsp/signInForm.jsp").forward(request, response);

@@ -1,4 +1,4 @@
-package service;
+package controller;
 
 import dao.DAOFactory;
 import dao.OrderDAO;
@@ -9,9 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.Enumeration;
 import java.util.List;
 
 @WebServlet(name = "AdminSignIn", urlPatterns = "/admin")
@@ -20,6 +18,12 @@ public class AdminSignIn extends HttpServlet {
         DAOFactory factory = DAOFactory.getInstance();
         OrderDAO dao = factory.getOrderDAO();
         List<Order> list = dao.getAllOrders();
+        float totalCost = 0;
+        for(Order order : list) {
+            totalCost += order.getCost();
+        }
+        String format = String.format("%.2f", totalCost);
+        request.setAttribute("cost", format);
         request.setAttribute("orders", list);
     }
 

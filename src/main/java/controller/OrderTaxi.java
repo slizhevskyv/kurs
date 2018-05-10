@@ -1,4 +1,4 @@
-package service;
+package controller;
 
 import dao.DAOFactory;
 import dao.OrderDAO;
@@ -8,7 +8,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import util.CostParser;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

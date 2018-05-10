@@ -10,4 +10,6 @@ public interface OrderDAO {
     boolean userIsExist(String login, String password);
     String getCostByDate();
     List<Order> getAllOrders();
+    float getTotalCost();
+    boolean updateCost();
 }

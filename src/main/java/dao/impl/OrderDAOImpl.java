@@ -132,7 +132,7 @@ public class OrderDAOImpl implements OrderDAO {
             try {
                 Statement statement = connection.createStatement();
                 try {
-                    ResultSet set = statement.executeQuery("SELECT dateOrder,SUM(cost) AS cost FROM business.order WHERE dateOrder <= CURRENT_DATE GROUP BY dateOrder LIMIT 5");
+                    ResultSet set = statement.executeQuery("SELECT dateOrder,SUM(cost) AS cost FROM business.order GROUP BY dateOrder ORDER BY dateOrder DESC LIMIT 5");
                     try {
                         while (set.next()) {
                             buffer.append(set.getDate("dateOrder") + " " + set.getFloat("cost") + "\n");
@@ -165,11 +165,14 @@ public class OrderDAOImpl implements OrderDAO {
                     ResultSet set = statement.executeQuery("SELECT departure,destination,customerName,telephone,cost,comment,typeOfMachine,addRequirement FROM business.order");
                     try {
                         while (set.next()) {
+                            float cost = set.getFloat("cost");
+                            int i = (int)Math.round(cost * 100);
+                            cost = (float)i/100;
                             Order order = new OrderBuilder()
                                     .addRequirement(set.getString("addRequirement"))
                                     .typeOfMachine(set.getString("typeOfMachine"))
                                     .comment(set.getString("comment"))
-                                    .cost(set.getFloat("cost"))
+                                    .cost(cost)
                                     .phoneNumber(set.getString("telephone"))
                                     .customerName(set.getString("customerName"))
                                     .destination(set.getString("destination"))
@@ -192,5 +195,57 @@ public class OrderDAOImpl implements OrderDAO {
             e.printStackTrace();
         }
         return list;
+    }
+
+    public float getTotalCost() {
+        try {
+            Class.forName(driverName);
+            Connection connection = DriverManager.getConnection(url,userDB,passwordDB);
+            try {
+                Statement statement = connection.createStatement();
+                try {
+                    ResultSet set = statement.executeQuery("SELECT SUM(cost) AS 'cost' FROM business.order");
+                    try {
+                        while (set.next()) {
+                            return set.getFloat("cost");
+                        }
+                    } finally {
+                        set.close();
+                    }
+                }finally {
+                    statement.close();
+                }
+            }finally {
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public boolean updateCost() {
+        try {
+            Class.forName(driverName);
+            Connection connection = DriverManager.getConnection(url,userDB,passwordDB);
+            try {
+                PreparedStatement statement = connection.prepareStatement("UPDATE business.order SET cost=(cost-(cost*0.1))");
+                try {
+                    statement.executeUpdate();
+                    return true;
+                }finally {
+                    statement.close();
+                }
+            }finally {
+                connection.close();
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

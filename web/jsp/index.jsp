@@ -20,7 +20,7 @@
         <div class="row">
             <div class="col-1 customCol">
                 <nav class="navbar navbar-light bg-light h-100 flex-column align-items-center justify-content-start">
-                    <a class="nav-link navbar-brand text-center font-weight-bold text-primary mb-5" href="#">Лого</a>
+                    <a class="nav-link navbar-brand text-center font-weight-bold text-primary mb-5" href="#">Такси 791</a>
                     <ul class="nav nav-pills flex-column w-100">
                         <li class="nav-item">
                             <a href="#call" role="tab" data-toggle="pill" class="nav-link active d-flex flex-column align-items-center">
@@ -371,7 +371,7 @@
                                     <li class="font-weight-light">В случае изменения маршрута или осуществления остановок по желанию пассажира, расчет производится по показаниям таксометра по действующим тарифам службы.</li>
                                 </ul>
                                 <br/>
-                                <p class="font-weight-light">Оформить заказ можно по телефонным номерам 111, 80296666001, 80293333001, 80292222001, 80259999001 у диспетчера или через сайт.</p>
+                                <p class="font-weight-light">Оформить заказ можно по телефонным номерам 791, 80296666001, 80293333001, 80292222001, 80259999001 у диспетчера или через сайт.</p>
 
                             </div>
                         </div>
@@ -454,7 +454,7 @@
                                                     <div class="contact-item px-2">
                                                         <h2 class="text-center font-weight-light mb-5">Телефоны для вызова</h2>
                                                         <div class="contact-item__item contact-item__item d-flex align-items-center mb-3">
-                                                            <span class="textColorBlue mr-3 fs-13">135</span>
+                                                            <span class="textColorBlue mr-3 fs-13">791</span>
                                                             <span class="font-weight-light fs-13">с городского или мобильного</span>
                                                         </div>
                                                         <div class="contact-item__item d-flex align-items-center mb-3">

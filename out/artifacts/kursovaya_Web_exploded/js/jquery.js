@@ -78,8 +78,21 @@ function call() {
             alert('Возникла ошибка: ' + xhr.responseCode);
         }
     });
-
-
-
 }
+
+$("#giveJoyButton").on("click", function() {
+    $.ajax({
+        type: 'POST',
+        url: '/updateCost',
+        data: "1",
+        success: function(data) {
+            var tempData = parseFloat(data);
+            $("#newCost").text("Общая сумма: " + tempData.toFixed(2) + " BYN");
+
+        },
+        error:  function(xhr){
+            alert('Возникла ошибка: ' + xhr.responseCode);
+        }
+    });
+});
 
