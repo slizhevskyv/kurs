@@ -6,40 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18d22604-ca23-42c5-86a1-3b6a7de97ecf" name="Default" comment="ver 1.03">
+    <list default="true" id="18d22604-ca23-42c5-86a1-3b6a7de97ecf" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/kursovaya.iml" afterPath="$PROJECT_DIR$/kursovaya.iml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/classes/dao/OrderDAO.class" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/classes/dao/OrderDAO.class" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/classes/dao/impl/OrderDAOImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/classes/dao/impl/OrderDAOImpl.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/classes/service/AdminLogOut.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/classes/service/AdminSignIn.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/classes/service/AuthFilter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/classes/service/FetchCostAndDate.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/classes/service/OrderTaxi.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/WEB-INF/web.xml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/chart.js" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/chart.js" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/jquery.js" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/js/jquery.js" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/jsp/adminPanel.jsp" afterPath="$PROJECT_DIR$/out/artifacts/kursovaya_Web_exploded/jsp/adminPanel.jsp" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/OrderDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/OrderDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/OrderDAOImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/AdminLogOut.java" afterPath="$PROJECT_DIR$/src/main/java/controller/AdminLogOut.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/AdminSignIn.java" afterPath="$PROJECT_DIR$/src/main/java/controller/AdminSignIn.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/AuthFilter.java" afterPath="$PROJECT_DIR$/src/main/java/controller/AuthFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/FetchCostAndDate.java" afterPath="$PROJECT_DIR$/src/main/java/controller/FetchCostAndDate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/OrderTaxi.java" afterPath="$PROJECT_DIR$/src/main/java/controller/OrderTaxi.java" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/OrderDAO.class" afterPath="$PROJECT_DIR$/target/classes/dao/OrderDAO.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/OrderDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/dao/impl/OrderDAOImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/AdminLogOut.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/AdminSignIn.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/AuthFilter.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/FetchCostAndDate.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/OrderTaxi.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/web/js/chart.js" afterPath="$PROJECT_DIR$/web/js/chart.js" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery.js" afterPath="$PROJECT_DIR$/web/js/jquery.js" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/adminPanel.jsp" afterPath="$PROJECT_DIR$/web/jsp/adminPanel.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/jsp/index.jsp" afterPath="$PROJECT_DIR$/web/jsp/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -667,7 +643,7 @@
       <workItem from="1525458826490" duration="19317000" />
       <workItem from="1525515494628" duration="17480000" />
       <workItem from="1525878001274" duration="3095000" />
-      <workItem from="1525941906432" duration="15864000" />
+      <workItem from="1525941906432" duration="15896000" />
     </task>
     <task id="LOCAL-00001" summary="18/04/18">
       <created>1524052756152</created>
@@ -725,11 +701,18 @@
       <option name="project" value="LOCAL" />
       <updated>1525178181061</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ver 1.04">
+      <created>1525973887096</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1525973887096</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199118000" />
+    <option name="totallyTimeSpent" value="199150000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -793,7 +776,8 @@
     <MESSAGE value="ver 1.02" />
     <MESSAGE value="ver 1.02(add auth)" />
     <MESSAGE value="ver 1.02(update auth)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver 1.02(update auth)" />
+    <MESSAGE value="ver 1.04" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver 1.04" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
